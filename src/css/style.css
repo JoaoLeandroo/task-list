@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root {
@@ -12,10 +17,137 @@
     --transparentGray: #a4a4a4be;
     --primaryBlack: #000000;
     --secundaryBlack: #151515;
+    --primaryRed: #FF0000;
+    --secundaryRed: #FE2E2E;
+    --buttonAdd: #00FF00;
 }
 
 body {
     max-width: 1440px;
     width: 100%;
     background-color: var(--primaryGreen-blue);
+    margin: 0 auto;
+}
+header {
+    width: 100%;
+    /* height: 60px; */
+    background-color: var(--secundaryGreen-blue);
+    color: var(--primaryWhite);
+    padding: 20px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+header h1 {
+    text-shadow: 4px 4px 4px var(--secundaryBlack);
+}
+
+.button-add {
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: var(--buttonAdd);
+    border-radius: 50%;
+    transition: all 400ms ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-add:hover {
+    box-shadow: 2px 2px 2px var(--primaryBlack);
+}
+
+.button-add div{
+    width: 60%;
+    height: 6px;
+    background-color: var(--primaryWhite);
+}
+
+.button-add div::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background-color: var(--primaryWhite);
+    transform: rotate(90deg);
+}
+
+main {
+    width: 100%;
+}
+
+main .menu-list {
+    width: 95%;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.menu-list .ul-list {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+}
+
+.ul-list .li-list {
+    width: 320px;
+    height: 360px;
+    background-color: var(--secundaryGreen-blue);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px var(--secundaryBlack);
+    color: var(--primaryWhite);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.li-list .tittle-task {
+    text-shadow: 3px 3px 3px var(--secundaryBlack);
+    max-width: 95%;
+    text-align: center;
+}
+
+.li-list p {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.li-list .delete-task {
+    border: none;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: var(--primaryRed);
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.li-list .delete-task:hover {
+    background-color: var(--secundaryRed);
+    box-shadow: 2px 2px 2px var(--primaryBlack);
+}
+
+.delete-task div {
+    width: 60%;
+    height: 4px;
+    background-color: var(--primaryWhite);
+    margin: 0 auto;
 }
