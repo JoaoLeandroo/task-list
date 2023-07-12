@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryGreen-blue: #0B614B;
+    --secundaryGreen-blue: #088A68;
+    --primaryWhite: #ffffff;
+    --primaryGray: #A4A4A4;
+    --transparentGray: #a4a4a4be;
+    --primaryBlack: #000000;
+    --secundaryBlack: #151515;
+}
+
+body {
+    max-width: 1440px;
+    width: 100%;
+    background-color: var(--primaryGreen-blue);
+}
