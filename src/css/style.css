@@ -108,7 +108,7 @@ main .menu-list {
     box-shadow: 4px 4px 4px var(--secundaryBlack);
     color: var(--primaryWhite);
     position: relative;
-
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,6 +124,9 @@ main .menu-list {
 .li-list p {
     font-weight: bold;
     font-size: 17px;
+    width: 95%;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .li-list .delete-task {
@@ -136,8 +139,8 @@ main .menu-list {
     background-color: var(--primaryRed);
     transition: all 0.3s ease-in-out;
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: -12px;
+    right: -14px;
 }
 
 .li-list .delete-task:hover {
@@ -150,4 +153,15 @@ main .menu-list {
     height: 4px;
     background-color: var(--primaryWhite);
     margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+    header {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
 }

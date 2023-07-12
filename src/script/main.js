@@ -1,6 +1,6 @@
 const buttonAdd = document.querySelector(".button-add")
 const ulList = document.querySelector(".ul-list")
-const toDoList = []
+const toDoList = JSON.parse(localStorage.getItem("@taskListKey")) || [];
 
 
 function buttonAddTittleAndTask() {
@@ -17,10 +17,10 @@ function buttonAddTittleAndTask() {
 
     const taskList = prompt(`
         Informe a tarefa
-        *Limite 120 caracteres"
+        *Limite 250 caracteres"
     `)
 
-    if(taskList === '' || taskList.length > 120) {
+    if(taskList === '' || taskList.length > 250) {
         alert("Não salvo, informe a tarefa corretamente.")
         return
     }
@@ -29,8 +29,9 @@ function buttonAddTittleAndTask() {
     toDoList.unshift(newToDoList)
     
     renderList()
+    saveList()
 }
-
+buttonAdd.addEventListener("click", buttonAddTittleAndTask)
 
 function structureList(title, task) {
     return `
@@ -67,8 +68,13 @@ function deleteTask() {
     if(confirmDelete.toUpperCase() === 'DELETAR'){
         toDoList.splice(postion, 1)
         renderList()
+        saveList()
         return
     }
 }
 
-buttonAdd.addEventListener("click", buttonAddTittleAndTask)
+renderList()
+
+function saveList() {
+    localStorage.setItem('@taskListKey', JSON.stringify(toDoList));
+}
